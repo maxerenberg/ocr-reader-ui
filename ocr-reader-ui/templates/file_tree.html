@@ -1,0 +1,15 @@
+{% for folder_name in data["folders"] -%}
+<li class="folder-inactive">
+  <span class="fs-item-container">
+    <span class="caret">▶</span>
+    <span class="fs-item-text">{{ folder_name }}</span>
+  </span>
+</li>
+{%- endfor %}
+{% for file_name in data["files"] -%}
+<li class="fs-image">
+  <span class="fs-item-container">
+    <span class="fs-item-text">{{ file_name }}</span>
+  </span>
+</li>
+{%- endfor %}

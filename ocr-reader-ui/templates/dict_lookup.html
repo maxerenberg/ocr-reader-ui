@@ -1,0 +1,28 @@
+{% for word in words -%}
+<li>
+  <div class="dict-display-main clearfix">
+    <div class="dict-display-bg">{{ word["bg"] }}</div>
+    <div>
+      {% if word["hg_main"] is not none -%}
+      <div class="dict-display-hg-main">
+        {{ word["hg_main"]["text"] }}
+      </div>
+      {%- endif %}
+      {% if word["hg_alt"] is not none -%}
+      <div>Alt: {{ word["hg_alt"] }}</div>
+      {%- endif %}
+      {% if word["kanji_alt"] is not none -%}
+      <div>Other kanji: {{ word["kanji_alt"] }}</div>
+      {%- endif %}
+    </div>
+  </div>
+  <div>
+    <ol class="defns-list">
+      {% for defn in word["defns"] -%}
+      <li>{{ defn }}</li>
+      {%- endfor %}
+    </ol>
+  </div>
+</li>
+<hr>
+{%- endfor %}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" href="common.css">
+</head>
+
+<body>
+  <div id="grid-container">
+    <div class="grid-item" id="panel-menu">
+      <div class="sticky-top">
+        <ul>
+          <li>
+            <div id="menu-files" data-menu-id="file-explorer">
+              <img src="folder.png">
+            </div>
+          </li>
+          <li>
+            <div id="menu-ocr" data-menu-id="ocr-explorer">
+              <img src="ocr.png">
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid-item" id="panel-explorer">
+      <div class="sticky-top">
+        <div class="menu-entry" id="ocr-explorer">
+          <div class="explorer-title">OCR</div>
+          <hr>
+          <div id="ocr-explorer-text">
+            Text: <input type="text" autocomplete="off">
+          </div>
+          <ul id="word-list"></ul>
+        </div>
+        <div class="menu-entry" id="file-explorer" style="display: none;">
+          <div class="explorer-title">File Explorer</div>
+          <hr>
+          <ul id="file-tree"></ul>
+        </div>
+      </div>
+      <div id="resize-drag"></div>
+    </div>
+    <div class="grid-item" id="image-column">
+      <div id="image-controls-top">
+        <div class="vertical-align">
+          <span id="zoom-out">-</span>
+          <span id="image-filename"></span>
+          <span id="zoom-in">+</span>
+        </div>
+      </div>
+      <div id="image-controls-left">
+        <p class="vertical-align">&lt;</p>
+      </div>
+      <div id="image-controls-center">
+        <p id="loading-text" class="vertical-align">Loading...</p>
+        <div id="image-container"></div>
+      </div>
+      <div id="image-controls-right">
+        <p class="vertical-align">&gt;</p>
+      </div>
+    </div>
+  </div>
+  <script src="common.js"></script>
+</body>
+
+</html>
